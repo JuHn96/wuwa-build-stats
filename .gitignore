@@ -1,0 +1,158 @@
+# github에 올라가는것
+# Dockerfile / compose.yaml / Alembic migration / Python source code / Next.js source code / Terraform *.tf / GitHub Actions YAML / .env.example
+
+# github에 올리지 않을 것
+# .env / 실제 DATABASE_URL / 비밀번호/API Key / PostgreSQL 실제 데이터 / DB Backup / 전체 게임 JSON
+# 전체 게임 이미지 / node_modules / Python 가상환경 / 빌드 결과물 / Terraform state
+
+
+# =========================================================
+# Secrets / Environment Variables
+# 실제 비밀번호, DB URL, API Key 등은 Git에 올리지 않는다.
+# =========================================================
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+
+
+# =========================================================
+# Local Game Data / Assets
+# 실제 Master Data와 게임 이미지는 Repository에 올리지 않는다.
+# 나중에 DB / Object Storage로 분리한다.
+# =========================================================
+
+/data/game-data/*.json
+/data/img/
+
+
+# =========================================================
+# Local Database / Backup Data
+# 실제 DB 파일이나 dump는 Git으로 관리하지 않는다.
+# =========================================================
+
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.backup
+
+/data/backups/
+/postgres-data/
+
+
+# =========================================================
+# Python / FastAPI
+# =========================================================
+
+.venv/
+venv/
+
+__pycache__/
+*.py[cod]
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.coverage
+.coverage.*
+htmlcov/
+
+dist/
+build/
+*.egg-info/
+
+
+# =========================================================
+# Node.js / Next.js
+# =========================================================
+
+node_modules/
+
+.next/
+out/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.turbo/
+
+
+# =========================================================
+# Android / Gradle
+# =========================================================
+
+.gradle/
+**/build/
+
+local.properties
+*.iml
+
+.cxx/
+.externalNativeBuild/
+
+
+# =========================================================
+# IDE / Editor
+# 개인 IDE 설정은 우선 제외한다.
+# 나중에 팀 공용 설정이 필요하면 선택적으로 Git에 포함한다.
+# =========================================================
+
+.idea/
+.vscode/
+
+
+# =========================================================
+# OS Files
+# =========================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# =========================================================
+# Logs / Temporary Files
+# =========================================================
+
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+
+tmp/
+temp/
+
+
+# =========================================================
+# Docker Local Data
+# Container 정의는 Git에 올리지만
+# Container가 생성한 실제 로컬 데이터는 올리지 않는다.
+# =========================================================
+
+.docker-data/
+.local/
+
+
+# =========================================================
+# Terraform / AWS - Future
+# IaC 코드는 Git에 올리되 상태파일과 비밀값은 제외한다.
+# =========================================================
+
+.terraform/
+
+*.tfstate
+*.tfstate.*
+
+*.tfvars
+*.tfvars.json
+
+crash.log
+crash.*.log
