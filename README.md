@@ -45,3 +45,28 @@ test: 테스트 추가/수정
 ## Status
 
 Development environment setup in progress.
+<<<<<<< HEAD
+=======
+
+## Master Data 검증
+
+로컬 Master Data와 이미지 파일의 정합성을 검사하기 위한 스크립트입니다.
+
+### 대상
+
+- `data/game-data/characters.json`
+- `data/game-data/weapons.json`
+- `data/game-data/echoes.json`
+- `data/img/characters/`
+- `data/img/weapons/`
+- `data/img/echoes/`
+
+실제 Master JSON과 이미지 파일은 Git에 포함하지 않습니다.
+
+### 실행
+
+프로젝트 루트에서 실행합니다.
+
+```bash
+python3 scripts/validate_master_data.py
+>>>>>>> 19c7058 (chore: Master Data 정합성 검증 스크립트 추가)
