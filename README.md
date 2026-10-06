@@ -45,8 +45,6 @@ test: 테스트 추가/수정
 ## Status
 
 Development environment setup in progress.
-<<<<<<< HEAD
-=======
 
 ## Master Data 검증
 
@@ -69,4 +67,3 @@ Development environment setup in progress.
 
 ```bash
 python3 scripts/validate_master_data.py
->>>>>>> 19c7058 (chore: Master Data 정합성 검증 스크립트 추가)
